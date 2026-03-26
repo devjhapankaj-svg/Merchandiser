@@ -14,9 +14,7 @@ struct bbe_billing_systemApp: App {
 
     var body: some Scene {
         WindowGroup {
-            InvoiceScreenView().environment(\.managedObjectContext, persistenceController.container.viewContext)
-//            ContentView()
-//                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            SplashView()
         }
     }
 }

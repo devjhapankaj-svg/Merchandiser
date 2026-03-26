@@ -9,20 +9,11 @@ import Foundation
 import SwiftData
 
 @Model
-
-
-//// Function to generate the invoice number
-//func generateInvoiceNumber() -> String {
-//    let letters = String((0..<2).map { _ in "ABCDEFGHIJKLMNOPQRSTUVWXYZ".randomElement()! })
-//    let numbers = String((0..<5).map { _ in "0123456789".randomElement()! })
-//    return letters + numbers
-//}
-
-
 final class Invoice {
     enum Status: String, Codable {
         case paid
         case pending
+        case partialPaid
         case overdue
     }
     
@@ -49,6 +40,8 @@ final class Invoice {
             "hourglass"
         case .overdue:
             "clock.badge.exclamationmark.fill"
+        case .partialPaid:
+            "clock.badge.checkmark.fill"
         }
         
     }
